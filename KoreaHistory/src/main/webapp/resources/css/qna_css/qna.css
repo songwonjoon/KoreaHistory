@@ -1,0 +1,155 @@
+.h1{
+	padding: 10px 0 0 450px;
+	font-size: 100px;
+	font-family: NanumBrush;
+	margin-bottom: 50px;
+	margin-top: 50px;
+		
+}
+.qna_table{
+	margin-left: 190px;
+	border-collapse: collapse;
+}
+.qna_tr{
+	height: 100px;
+}
+.qna_t{
+	width:250px; 
+	font-size:32px;
+	font-family:YeonSung;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+}
+tr .qna_ti{
+	width:750px; 
+	font-size:32px;
+	font-family:YeonSung;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+}
+.qna_td{
+	text-align: center;
+	border-bottom-style: solid;
+	line-height: 5;
+}
+.qna_wri{
+	padding-top: 20px;
+	text-align: right;
+}
+.qna_wri_qwri{
+	text-decoration: none;
+	color: black;
+	font-family: YeonSung;
+	font-weight: bold;
+	font-size: 25px;
+}
+.qna_wri_qwri:hover{
+	color: blue;
+}
+.qna_td_tit{
+
+	text-decoration: none;
+	color: black;
+	font-family: YeonSung;
+	font-size: 20px;
+	text-overflow: clip;
+}
+.qna_td_tit:hover {
+	color: blue;
+}
+#qna_td_writer{
+	font-family: 백범김구;
+	font-size: 18px;
+}
+#qna_td_ox{
+	font-weight: bolder;
+	font-size: 20px;
+}
+#qna_td_qdate{
+	font-weight:500;
+}
+#hform{
+	margin-left: 420px;
+}
+.qna_page_num{
+	text-decoration: none;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+}
+.qna_page_num:hover {
+	color: olive;
+}
+#searform{
+	margin-left: 950px;
+}
+.qna_search{
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: 800;
+}
+input[id="qna_search_check"] + #qna_label_tit{
+	display: inline-block;
+	width: 20px;
+	height:15px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+input[id="qna_search_check"]:checked+#qna_label_tit{
+	background-color: black;
+}
+input[id="qna_search_check"]{
+	display: none ;
+}
+input[id="qna_search_con"] + #qna_label_con{
+	display: inline-block;
+	width: 20px;
+	height: 15px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+input[id="qna_search_con"]:checked+#qna_label_con{
+	background-color: black;
+}
+input[id="qna_search_con"]{
+	display: none;
+}
+.qna_seach_text{
+	padding-top: 10px;
+	padding-bottom:5px;
+	border-radius: 3px;
+	border: 1px solid black;
+}
+.qna_seach_sub{
+	height: 25px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px none black;
+	background-color: white;
+	font-weight: bold;
+}
+.qna_seach_sub:hover {
+	color: white;
+	background-color: black;
+}
+
+
+@font-face {font-family: '백범김구'; src: url(../font/독립서체_백범김구_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_별헤는밤'; src: url(../font/독립서체_윤동주_별헤는밤_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_서시'; src: url(../font/독립서체_윤동주_서시_GS.ttf) format('truetype');}
+@font-face {font-family: '윤봉길'; src: url(../font/독립서체_윤봉길_GS.ttf) format('truetype');}
+@font-face {font-family: '한용운'; src: url(../font/독립서체_한용운_GS.ttf) format('truetype');}
+
+@font-face {font-family: 'YeonSung'; src: url(../font/YeonSung-Regular.ttf) format('truetype');}
+
+@font-face {font-family: 'NanumBrush'; src: url(../font/NanumBrush.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothic'; src: url(../font/NanumGothic.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicBold'; src: url(../font/NanumGothicBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicExtraBold'; src: url(../font/NanumGothicExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjo'; src: url(../font/NanumMyeongjo.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoBold'; src: url(../font/NanumMyeongjoBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoExtraBold'; src: url(../font/NanumMyeongjoExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumPen'; src: url(../font/NanumPen.ttf) format('truetype');}	
+@font-face {font-family: 'Madame'; src: url(../font/Madame.ttf) format('truetype');}

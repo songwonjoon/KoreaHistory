@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.tech.history.dao.PDao">
+    <sql id="changeBoard">
+		<choose>
+			<when test="param2==1">
+				WHERE (PTITLE LIKE '%' || #{param1} || '%') 
+			</when>
+			<when test="param2==2">
+				WHERE (P_CONTENT LIKE '%' || #{param1} || '%') 
+			</when>
+			<when test="param2==3">
+				WHERE (PTITLE LIKE '%' || #{param1} || '%' OR
+				P_CONTENT LIKE '%' || #{param1} || '%') 
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</sql>
+	<sql id="changeList">
+			<choose>
+			<when test="param4==1">
+				WHERE (PTITLE LIKE '%' || #{param3} || '%') 
+			</when>
+			<when test="param4==2">
+				WHERE (P_CONTENT LIKE '%' || #{param3} || '%') 
+			</when>
+			<when test="param4==3">
+				WHERE (PTITLE LIKE '%' || #{param3} || '%' OR
+				P_CONTENT LIKE '%' || #{param3} || '%') 
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</sql>
+    		<select id="photo_list" resultType="com.tech.history.dto.PhotoDto">
+    			SELECT P_NUM,PTITLE,PID,PDATE,P_CONTENT,PFILE
+    			 FROM (
+    			SELECT P_NUM,PTITLE,PID,PDATE,P_CONTENT,PFILE,
+				ROW_NUMBER() OVER(ORDER BY P_NUM DESC) PHOTO_SEQ FROM PHOTO
+				<include refid="changeList"/>
+				)
+				WHERE PHOTO_SEQ BETWEEN #{param1} AND #{param2}
+    		</select>
+    	
+    		<select id="selCount" resultType="Integer">
+    			SELECT COUNT(*) FROM PHOTO
+    			<include refid="changeBoard"/>
+    </select>
+    <insert id="pwrite">
+        INSERT INTO PHOTO(P_NUM,PTITLE,PID,P_CONTENT,PFILE) 
+						VALUES
+						(PHOTO_SEQ.NEXTVAL, #{param1},#{param2},#{param3},#{param4})
+					
+    </insert>
+    <delete id="pdelete">
+		DELETE FROM PHOTO WHERE P_NUM=#{param1}
+	</delete>
+	<select id="photo_view" resultType="com.tech.history.dto.PhotoDto">
+         			 SELECT * FROM 
+       				 PHOTO
+       				 WHERE P_NUM=#{param1 }
+    </select>
+	<select id="photo_modify" resultType="com.tech.history.dto.PhotoDto">
+         			 SELECT * FROM 
+       				 PHOTO
+       				 WHERE P_NUM=#{param1 }
+    </select>
+	 <update id="photo_mo">
+    	UPDATE PHOTO SET PTITLE=#{param2},PID=#{param3},
+    	P_CONTENT=#{param4} WHERE P_NUM=#{param1}
+    </update>
+	
+	
+    </mapper>

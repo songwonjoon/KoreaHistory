@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tech.history.dao.WikiIDao">
+	<select id="dokdo" resultType="com.tech.history.dto.DokdoDto">
+		SELECT * FROM DOKDO
+		WHERE BACKUP=#{param1 }
+	</select>
+
+	<select id="eastSea" resultType="com.tech.history.dto.EastSeaDto">
+		SELECT * FROM EASTSEA
+		WHERE BACKUP=#{param1 }
+	</select>
+
+	<select id="k_im" resultType="com.tech.history.dto.K_imDto">
+		SELECT * FROM K_IM
+		WHERE BACKUP=#{param1 }
+	</select>
+
+	<select id="ktw" resultType="com.tech.history.dto.KTW_Dto">
+		SELECT * FROM KTW
+		WHERE BACKUP=#{param1 }
+	</select>
+
+	<select id="slave" resultType="com.tech.history.dto.SlaveDto">
+		SELECT * FROM SLAVE
+		WHERE BACKUP=#{param1 }
+	</select>
+
+	<update id="dokdoUpdate">
+		UPDATE DOKDO SET OUTLINE=#{param1 }, HISTORY=#{param2},
+		JAPAN=#{param3 }, KOREA=#{param4 }, IMPORTANCE=#{param5 }, RECOGNITION=#{param6 }
+		WHERE BACKUP='FALSE'
+	</update>
+
+	<update id="eastSeaUpdate">
+		UPDATE EASTSEA SET OUTLINE=#{param1 },
+		TERRITORY=#{param2 }, DISPUTE=#{param3 },
+		HISTORY=#{param4},
+		TREND=#{param5}
+		WHERE BACKUP='FALSE'
+	</update>
+
+	<update id="slaveUpdate">
+		UPDATE SLAVE SET OUTLINE=#{param1 }, DETAIL=#{param2}, 
+		TESTIMONY=#{param3 },
+		PRESENT=#{param4 }, JAPAN=#{param5 },
+		DENIAL=#{param6 }
+		WHERE BACKUP='FALSE'
+	</update>
+
+	<update id="k_imUpdate1">
+		UPDATE K_IM SET OUTLINE=#{param1 }, TIME=#{param2 },
+		TIME10=#{param3 } ,TIME20=#{param4 }, TIME30=#{param5 }
+		WHERE BACKUP='FALSE'
+	</update>
+
+	<update id="k_imUpdate2">
+		UPDATE K_IM SET STRUGGLE=#{param1 },
+		ENLIGHTENMENT=#{param2 }, ECONOMY=#{param3 } ,CULTURE=#{param4 }
+		WHERE BACKUP='FALSE'
+	</update>
+
+	<update id="ktwUpdate">
+		UPDATE KTW SET OUTLINE=#{param1 }, THRESHOLD=#{param2}, 
+		KOREA=#{param3 }, JAPAN=#{param4 }, RESPONSE=#{param5 },
+		REACTION=#{param6 }
+		WHERE BACKUP='FALSE'
+	</update>
+	
+	<update id="dokdoBackup">
+		UPDATE DOKDO SET
+			OUTLINE=
+			    (SELECT OUTLINE FROM DOKDO WHERE BACKUP='TRUE'),
+			HISTORY=
+			    (SELECT HISTORY FROM DOKDO WHERE BACKUP='TRUE'),
+			JAPAN=
+			    (SELECT JAPAN FROM DOKDO WHERE BACKUP='TRUE'),
+			KOREA=
+			    (SELECT KOREA FROM DOKDO WHERE BACKUP='TRUE'),
+			IMPORTANCE=
+			    (SELECT IMPORTANCE FROM DOKDO WHERE BACKUP='TRUE'),
+			RECOGNITION=
+			    (SELECT RECOGNITION FROM DOKDO WHERE BACKUP='TRUE')
+			WHERE BACKUP='FALSE'
+	</update>
+	
+	<update id="k_imBackup">
+			UPDATE K_IM SET
+			    OUTLINE=
+			        (SELECT OUTLINE FROM K_IM WHERE BACKUP='TRUE'),
+			    TIME=
+			        (SELECT TIME FROM K_IM WHERE BACKUP='TRUE'),
+			    TIME10=
+			        (SELECT TIME10 FROM K_IM WHERE BACKUP='TRUE'),
+			    TIME20=
+			        (SELECT TIME20 FROM K_IM WHERE BACKUP='TRUE'),
+			    TIME30=
+			        (SELECT TIME30 FROM K_IM WHERE BACKUP='TRUE'),
+			    STRUGGLE=
+			        (SELECT STRUGGLE FROM K_IM WHERE BACKUP='TRUE'),
+			    ENLIGHTENMENT=
+			        (SELECT ENLIGHTENMENT FROM K_IM WHERE BACKUP='TRUE'),
+			    ECONOMY=
+			        (SELECT ECONOMY FROM K_IM WHERE BACKUP='TRUE'),
+			    CULTURE=
+			        (SELECT CULTURE FROM K_IM WHERE BACKUP='TRUE')
+			WHERE BACKUP='FALSE'
+	</update>
+	
+	<update id="slaveBackup">
+		UPDATE SLAVE SET
+		    OUTLINE=
+		        (SELECT OUTLINE FROM SLAVE WHERE BACKUP='TRUE'),
+		    DETAIL=
+		        (SELECT DETAIL FROM SLAVE WHERE BACKUP='TRUE'),
+		    TESTIMONY=
+		        (SELECT TESTIMONY FROM SLAVE WHERE BACKUP='TRUE'),
+		    PRESENT=
+		        (SELECT PRESENT FROM SLAVE WHERE BACKUP='TRUE'),
+		    JAPAN=
+		        (SELECT JAPAN FROM SLAVE WHERE BACKUP='TRUE'),
+		    DENIAL=
+		        (SELECT DENIAL FROM SLAVE WHERE BACKUP='TRUE')
+		WHERE BACKUP='FALSE'
+	</update>
+	
+	<update id="ktwBackup">
+		UPDATE KTW SET
+		    OUTLINE=
+		        (SELECT OUTLINE FROM KTW WHERE BACKUP='TRUE'),
+		    THRESHOLD=
+		        (SELECT THRESHOLD FROM KTW WHERE BACKUP='TRUE'),
+		    KOREA=
+		        (SELECT KOREA FROM KTW WHERE BACKUP='TRUE'),
+		    JAPAN=
+		        (SELECT JAPAN FROM KTW WHERE BACKUP='TRUE'),
+		    RESPONSE=
+		        (SELECT RESPONSE FROM KTW WHERE BACKUP='TRUE'),
+		    REACTION=
+		        (SELECT REACTION FROM KTW WHERE BACKUP='TRUE')
+		WHERE BACKUP='FALSE'
+	</update>
+	
+	<update id="eastseaBackup">
+		UPDATE EASTSEA SET
+		    OUTLINE=
+		        (SELECT OUTLINE FROM EASTSEA WHERE BACKUP='TRUE'),
+		    TERRITORY=
+		        (SELECT TERRITORY FROM EASTSEA WHERE BACKUP='TRUE'),
+		    DISPUTE=
+		        (SELECT DISPUTE FROM EASTSEA WHERE BACKUP='TRUE'),
+		    HISTORY=
+		        (SELECT HISTORY FROM EASTSEA WHERE BACKUP='TRUE'),
+		    TREND=
+		        (SELECT TREND FROM EASTSEA WHERE BACKUP='TRUE')
+		WHERE BACKUP='FALSE'
+	</update>
+</mapper>

@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.question {
+	font-size: 23pt;
+	font-family: crayon;
+	color: white;
+	width: 800px;
+	height: 400px;
+	background-image: url("../LeeImg/BlackBoard.jpg");
+	margin-left: 500px;
+}
+
+.answer {
+	font-family: crayon;
+	font-size: 15pt;
+	margin-left: 500px
+}
+
+.qna_seach_sub {
+	height: 25px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px none black;
+	background-color: white;
+	font-weight: bold;
+	padding-bottom: 2px;
+}
+
+.qna_seach_sub:hover {
+	color: white;
+	background-color: black;
+}
+
+@font-face {
+	font-family: 'crayon';
+	src: url(../LeeFont/crayon.ttf) format('truetype');
+}

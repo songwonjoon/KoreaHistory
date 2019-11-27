@@ -1,0 +1,177 @@
+.title {
+	list-style-type: none;
+	list-style-image: none;
+	}
+
+li {
+	/* list-style-type: circle; */
+	/* list-style-image:url("../../img/introduce/ribbon (1).png"); */ 
+}
+
+.history{list-style-image:url("../../img/introduce/search_1.png");}
+.test{list-style-image:url("../../img/introduce/flag.png");}
+.ranking{list-style-image:url("../../img/introduce/stats_2.png");}
+.game{list-style-image:url("../../img/introduce/alien.png");}
+.freeboard{list-style-image:url("../../img/introduce/images.png");}
+.qna{list-style-image:url("../../img/introduce/comment_4.png");}
+.gallery{list-style-image:url("../../img/introduce/image.png");}
+
+
+.back {
+	background-image: url("../../img/introduce/그림1.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#img_float1 {
+	float:right; 
+	position: static;
+	/* margin-top: 100px; */
+	margin-left:10px;
+	margin-right:0px;
+	margin-bottom: 40px;
+	
+	border: 3px ridge grey;
+	border-radius: 50px;
+}
+#img_float1:hover {
+	/* transform: rotate(360deg);
+	transition: transform 0.5s; */
+	width: 280px;
+	height: 180px;
+}
+
+#img_float2 {
+	float:right; 
+	position: static;
+	/* margin-top: 100px; */
+	margin-left:100px;
+	margin-right:330px;
+	margin-bottom: 40px;
+	
+	border: 3px ridge grey;
+	border-radius: 50px;
+}
+#img_float2:hover {
+	/* transform: rotate(720deg);
+	transition: transform 0.5s; */
+	width: 280px;
+	height: 180px;
+}
+
+#img_float3 {
+	float:right; 
+	position: static;
+	/* margin-top: 100px; */
+	margin-left:10px;
+	margin-right:0px;
+	margin-bottom: 40px;
+	
+	border: 3px ridge grey;
+	border-radius: 50px;
+}
+#img_float3:hover {
+	/* transform: rotate(1080deg);
+	transition: transform 0.5s; */
+	width: 280px;
+	height: 180px;
+}
+
+#img_float4 {
+	float:right; 
+	position: static;
+	/* margin-top: 100px; */
+	margin-left:100px;
+	margin-right:330px;
+	margin-bottom: 40px;
+	
+	border: 3px ridge grey;
+	border-radius: 50px;
+}
+#img_float4:hover {
+	/* transform: rotate(1440deg);
+	transition: transform 0.5s; */
+	width: 280px;
+	height: 180px;
+}
+
+#img_float5 {
+	float:right; 
+	position: static;
+	/* margin-top: 100px; */
+	margin-left:10px;
+	margin-right:0px;
+	margin-bottom: 0px;
+	
+	border: 3px ridge grey;
+	border-radius: 50px;
+}
+#img_float5:hover {
+	/* transform: rotate(1800deg);
+	transition: transform 0.5s; */
+	width: 280px;
+	height: 180px;
+}
+
+
+#img_float6 {
+	float:right; 
+	position: static;
+	/* margin-top: 100px; */
+	margin-left:100px;
+	margin-right:330px;
+	margin-bottom: 0px;
+	
+	border: 3px ridge grey;
+	border-radius: 50px;
+}
+#img_float6:hover {
+	/* transform: rotate(2160deg);
+	transition: transform 0.5s; */
+	width: 280px;
+	height: 180px;
+}
+
+.bigtitle {
+	font-family: 백범김구;
+	font-size: 50px;	
+}
+
+.title {
+	font-family: 윤동주_서시;
+	/* font-size: 50px; */
+}
+
+.greet {
+	font-family: NanumGothic;
+	font-size: 18px;
+}
+
+.character{
+	font-family: NanumGothic;
+	font-size: 18px;
+}
+
+.etc{
+	font-family: NanumGothic;
+	font-size: 15px;
+}
+
+
+@font-face {font-family: '백범김구'; src: url(../font/독립서체_백범김구_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_별헤는밤'; src: url(../font/독립서체_윤동주_별헤는밤_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_서시'; src: url(../font/독립서체_윤동주_서시_GS.ttf) format('truetype');}
+@font-face {font-family: '윤봉길'; src: url(../font/독립서체_윤봉길_GS.ttf) format('truetype');}
+@font-face {font-family: '한용운'; src: url(../font/독립서체_한용운_GS.ttf) format('truetype');}
+
+@font-face {font-family: 'YeonSung'; src: url(../font/YeonSung-Regular.ttf) format('truetype');}
+
+@font-face {font-family: 'NanumBrush'; src: url(../font/NanumBrush.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothic'; src: url(../font/NanumGothic.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicBold'; src: url(../font/NanumGothicBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicExtraBold'; src: url(../font/NanumGothicExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjo'; src: url(../font/NanumMyeongjo.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoBold'; src: url(../font/NanumMyeongjoBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoExtraBold'; src: url(../font/NanumMyeongjoExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumPen'; src: url(../font/NanumPen.ttf) format('truetype');}	
+@font-face {font-family: 'Madame'; src: url(../font/Madame.ttf) format('truetype');}

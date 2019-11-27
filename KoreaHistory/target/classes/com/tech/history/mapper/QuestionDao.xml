@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tech.history.dao.HistoryIDao">
+	<select id="mainform" resultType="com.tech.history.dto.MemberDto">
+		SELECT ID, SCORE FROM MEMBER
+		WHERE ID=#{param1 }
+	</select>
+
+	<select id="question" resultType="com.tech.history.dto.QuestionDto">
+		SELECT * FROM QUESTION
+		WHERE Q_NUM=#{param1 }
+	</select>
+	
+	<select id="question_proc" resultType="com.tech.history.dto.QuestionDto">
+		SELECT Q_ANSWER FROM QUESTION
+		WHERE Q_NUM=#{param1 }	
+	</select>
+	
+	<update id="scoreUpdate">
+		UPDATE MEMBER
+		SET SCORE=#{param1 }
+		WHERE ID=#{param2 }
+	</update>
+	
+	<select id="getScore" resultType="Integer">
+		SELECT SCORE
+		FROM MEMBER
+		WHERE ID=#{param1 }
+	</select>
+	
+	<select id="getId" resultType="String">
+		SELECT ID
+		FROM MEMBER
+		WHERE ID=#{param1 }
+	</select>
+	
+	<select id="getRank" resultType="com.tech.history.dto.MemberDto">
+		SELECT ID, SCORE
+		FROM(SELECT ID, SCORE
+    	     FROM MEMBER
+    	 	 ORDER BY SCORE DESC)
+		WHERE ROWNUM BETWEEN 1 AND 10
+	</select>
+	
+	<select id="getCount" resultType="Integer">
+		SELECT Q_CNT
+		FROM MEMBER
+		WHERE ID=#{param1 }
+	</select>
+	
+	<update id="cntUpdate">
+		UPDATE MEMBER
+		SET Q_CNT=#{param1 }
+		WHERE ID=#{param2 }
+	</update>
+	
+	<select id="getAns1" resultType="String">
+		SELECT ANS1 FROM QUESTION
+		WHERE Q_NUM=#{param1 }
+	</select>
+	
+	<select id="getAns2" resultType="String">
+		SELECT ANS2 FROM QUESTION
+		WHERE Q_NUM=#{param1 }
+	</select>
+	
+	<select id="getAns3" resultType="String">
+		SELECT ANS3 FROM QUESTION
+		WHERE Q_NUM=#{param1 }
+	</select>
+	
+	<select id="getAns4" resultType="String">
+		SELECT ANS4 FROM QUESTION
+		WHERE Q_NUM=#{param1 }
+	</select>
+</mapper>

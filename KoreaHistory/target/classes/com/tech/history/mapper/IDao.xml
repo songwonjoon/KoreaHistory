@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tech.history.dao.IDao">
+	<sql id="includeBoard">
+		<choose>
+			<when test="param2==1">
+				WHERE (HTITLE LIKE '%' || #{param1} ||'%')
+			</when>
+			<when test="param2==2">
+				WHERE (HCONTENT LIKE '%' || #{param1} ||'%')
+			</when>
+			<when test="param2==3">
+				WHERE (HTITLE LIKE '%' || #{param1} ||'%' OR
+				HCONTENT
+				LIKE '%' || #{param1} ||'%')
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</sql>
+	<sql id="includeList">
+		<choose>
+			<when test="param4==1">
+				WHERE (HTITLE LIKE '%' || #{param3} ||'%')
+			</when>
+			<when test="param4==2">
+				WHERE (HCONTENT LIKE '%' || #{param3} ||'%')
+			</when>
+			<when test="param4==3">
+				WHERE (HTITLE LIKE '%' || #{param3} ||'%' OR
+				HCONTENT
+				LIKE '%' || #{param3} ||'%')
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</sql>
+	<select id="historylist" resultType="com.tech.history.dto.Historydto">
+		SELECT HID, HNAME, HTITLE, HCONTENT,
+		HDATE ,HHIT, HGROUP, HSTEP,
+		HINDENT
+		FROM (
+		SELECT HID, HNAME, HTITLE, HCONTENT,HDATE, HHIT, HGROUP,
+		HSTEP, HINDENT,
+		ROW_NUMBER() OVER(ORDER BY HGROUP DESC, HSTEP ASC)
+		H_SEQ FROM
+		HISTORY_BOARD
+		<include refid="includeList" />
+		)
+		WHERE H_SEQ BETWEEN #{param1} AND #{param2}
+	</select>
+	<select id="selectHistoryCount" resultType="Integer">
+		SELECT COUNT(*) FROM HISTORY_BOARD
+		<include refid="includeBoard" />
+	</select>
+
+	<insert id="historywrite">
+		INSERT INTO HISTORY_BOARD(HID,HNAME,HTITLE,HCONTENT,
+		HHIT,HGROUP,HSTEP,HINDENT,HFILESRC)
+		VALUES(HISTORY_BOARD_SEQ.NEXTVAL,#{param1},#{param2},#{param3},0,
+		HISTORY_BOARD_SEQ.CURRVAL,0,0,#{param4})
+	</insert>
+	<update id="modify">
+		UPDATE HISTORY_BOARD SET HTITLE=#{param2},
+		HCONTENT=#{param3},HFILESRC=#{param4} WHERE HID=#{param1}
+	</update>
+	<delete id="delete">
+		DELETE FROM HISTORY_BOARD WHERE HID=#{param1}
+	</delete>
+	<update id="hitUp">
+		UPDATE HISTORY_BOARD SET HHIT=HHIT+1 WHERE
+		HID=#{param1}
+	</update>
+
+
+	<!-- <sql id="replyPlus"> <choose> <when test="param2==''"> SELECT*FROM 
+		HISTORY_BOARD WHERE HID=#{param1} </when> <when test="param2!=''"> SELECT 
+		* FROM HISTORY_BOARD A,REPLY B WHERE A.HID=#{param1} AND A.HTITLE=B.HTITLE 
+		</when> <otherwise> </otherwise> </choose> </sql> -->
+
+	<select id="historyContent" resultType="com.tech.history.dto.Historydto">
+		SELECT*FROM
+		HISTORY_BOARD
+		WHERE HID=#{param1}
+	</select>
+
+	<!-- <insert id="reply"> INSERT INTO REPLY(HTITLE,CONTENT) VALUES(#{param1},#{param2}) 
+		</insert> -->
+	<select id="getReply" resultType="com.tech.history.dto.Replydto">
+		SELECT * FROM REPLY
+		WHERE HTITLE=#{param1 }
+	</select>
+
+	<insert id="insertReply">
+		INSERT INTO REPLY VALUES(#{param1},
+		#{param2},REPLY_SEQ.NEXTVAL,#{param3},#{param4 })
+	</insert>
+
+	<select id="getHtitle" resultType="String">
+		SELECT HTITLE FROM
+		HISTORY_BOARD
+		WHERE HID=#{param1 }
+	</select>
+	<update id="replyModify">
+		UPDATE REPLY SET CONTENT=#{param1 } WHERE
+		CID=#{param2 }
+	</update>
+	<delete id="replyDelete">
+		DELETE REPLY WHERE CID=#{param1 }
+	</delete>
+	<select id="gethindent" resultType="Integer">
+		SELECT HINDENT FROM
+		HISTORY_BOARD WHERE HTITLE=#{param1 }
+	</select>
+	<update id="updateReply">
+		UPDATE HISTORY_BOARD SET HINDENT=#{param1 } WHERE
+		HTITLE=#{param2 }
+	</update>
+	<select id="getAdmin" resultType="Integer">
+		SELECT ADMIN FROM MEMBER
+		WHERE
+		ID=#{param1 }
+	</select>
+</mapper>

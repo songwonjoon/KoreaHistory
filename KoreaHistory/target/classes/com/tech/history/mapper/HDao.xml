@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.tech.history.dao.HDao">
+    	<sql id="includeBoard">
+		<choose>
+			<when test="param2==1">
+				WHERE (QTITLE LIKE '%' || #{param1} || '%') 
+			</when>
+			<when test="param2==2">
+				WHERE (W_CONTENT LIKE '%' || #{param1} || '%') 
+			</when>
+			<when test="param2==3">
+				WHERE (QTITLE LIKE '%' || #{param1} || '%' OR
+				W_CONTENT LIKE '%' || #{param1} || '%') 
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</sql>
+	<sql id="includeList">
+			<choose>
+			<when test="param4==1">
+				WHERE (QTITLE LIKE '%' || #{param3} || '%') 
+			</when>
+			<when test="param4==2">
+				WHERE (W_CONTENT LIKE '%' || #{param3} || '%') 
+			</when>
+			<when test="param4==3">
+				WHERE (QTITLE LIKE '%' || #{param3} || '%' OR
+				W_CONTENT LIKE '%' || #{param3} || '%') 
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</sql>
+    
+    		<select id="list" resultType="com.tech.history.dto.HistoryHDto">
+    			SELECT Q_NUM,QTITLE,WRITER,QDATE,W_CONTENT,OX
+    			 FROM (
+    			SELECT Q_NUM,QTITLE,WRITER,QDATE,W_CONTENT,OX,
+				ROW_NUMBER() OVER(ORDER BY Q_NUM DESC) B_SEQ FROM QNA
+				<include refid="includeList"/>
+				)
+				WHERE B_SEQ BETWEEN #{param1} AND #{param2}
+    			
+    		</select>
+    	
+    		<select id="selectBoardCount" resultType="Integer">
+    			SELECT COUNT(*) FROM QNA
+    			<include refid="includeBoard"/>
+    </select>
+    
+    
+    
+    <select id="modify_view" resultType="com.tech.history.dto.HistoryHDto">
+         			 SELECT * FROM 
+       				 QNA
+       				 WHERE Q_NUM=#{param1 }
+    </select>
+    <select id="content_view" resultType="com.tech.history.dto.HistoryHDto">
+         			 SELECT * FROM 
+       				 QNA
+       				 WHERE Q_NUM=#{param1 }
+    </select>
+    <insert id="qwrite">
+        INSERT INTO QNA(Q_NUM,QTITLE,WRITER,W_CONTENT,QFILE) 
+						VALUES
+						(QNA_SEQ.NEXTVAL, #{param2},#{param3},#{param4},#{param5})
+					
+    </insert>
+    <delete id="qdelete">
+		DELETE FROM QNA WHERE Q_NUM=#{param1}
+	</delete>
+	
+    <update id="modify_his">
+    	UPDATE QNA SET QTITLE=#{param2},WRITER=#{param3},
+    	W_CONTENT=#{param4} WHERE Q_NUM=#{param1}
+    </update>
+    
+  	<insert id="insert_reply">
+  		INSERT INTO ANSWER(QTITLE, A_CONTENT,Q_NUM) VALUES(#{param1 }, #{param2 },#{param3 })
+  	</insert>
+  	
+    <select id="getReply" resultType="String">
+    		SELECT A_CONTENT FROM ANSWER WHERE Q_NUM=#{param1}
+    </select>
+    <update id="getOx">
+    		UPDATE ANSWER SET OX='O' WHERE Q_NUM=#{param1}
+    </update>
+    <update id="showOx">
+			UPDATE QNA SET OX='O' WHERE Q_NUM=#{param1}  
+    </update>
+    <update id="update_reply">
+    		UPDATE ANSWER SET A_CONTENT=#{param2} WHERE Q_NUM=#{param1}
+    </update>
+    </mapper>

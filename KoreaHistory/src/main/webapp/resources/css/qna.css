@@ -1,0 +1,104 @@
+.h1{
+	padding: 10px 0 0 550px;
+	font-size: 70px;
+}
+#qna_list{
+	
+}
+.qna_table{
+	margin-left: 420px;
+}
+.qna_tr{
+	height: 100px;
+}
+tr .qna_t{
+	width:15%; 
+	font-size:20px;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+}
+tr .qna_ti{
+	font-size:20px;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+}
+.qna_td{
+	text-align: center;
+	border-bottom-style: solid;
+	line-height: 5;
+	
+}
+.qna_wri{
+	padding-top: 20px;
+	text-align: right;
+}
+.qna_wri_qwri{
+	text-decoration: none;
+	color: black;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.qna_wri_qwri:hover{
+	color: olive;
+}
+.qna_td_tit{
+	text-decoration: none;
+	color: black;
+	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+.qna_td_tit:hover {
+	color: olive;
+}
+#hform{
+	margin-left: 420px;
+}
+.qna_page_num{
+	text-decoration: none;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+}
+.qna_page_num:hover {
+	color: olive;
+}
+#searform{
+	margin-left: 850px;
+}
+.qna_search{
+	font-family: sans-serif;
+	font-weight: 800;
+	font-size: 18px;	
+}
+input[class="qna_search_check"] + .qna_label_tit{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+input[class="qna_search_check"]:checked+.qna_label_tit{
+	background-color: #666666;
+}
+input[class="qna_search_check"]{
+	display: ;
+}
+input[class="qna_search_con"] + .qna_label_con{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+input[class="qna_search_con"]:checked+.qna_label_con{
+	background-color: #666666;
+}
+input[class="qna_search_con"]{
+	display: ;
+}
+
+
+

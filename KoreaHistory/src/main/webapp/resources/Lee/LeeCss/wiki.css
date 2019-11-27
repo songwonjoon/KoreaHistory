@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.before_body {
+	background-color: #efefef;
+}
+
+.body {
+	margin: 0 200px 0 200px;
+	padding: 0 50px 0 50px;
+	border: solid 2px gray;
+	background-color: white;
+}
+
+.red {
+	color: red;
+}
+
+.blue {
+	color: blue;
+}
+
+.qna_seach_sub {
+	height: 25px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px none black;
+	background-color: white;
+	font-weight: bold;
+	padding-bottom: 2px;
+}
+
+.qna_seach_sub:hover {
+	color: white;
+	background-color: black;
+}

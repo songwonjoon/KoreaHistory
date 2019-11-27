@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tech.history.dao.DiceDao">
+	<select id="getUser" resultType="com.tech.history.dto.DiceGameDto">
+		SELECT * FROM GROUND
+		WHERE HUMAN=#{param1 }
+	</select>
+
+	<select id="getCom" resultType="com.tech.history.dto.DiceGameDto">
+		SELECT * FROM GROUND
+		WHERE HUMAN=#{param1 }
+	</select>
+	
+	<update id="userRun">
+		UPDATE GROUND
+		SET GROUND1=#{param1 }
+		WHERE HUMAN=#{param2 }
+	</update>
+	
+	<update id="cpuRun">
+		UPDATE GROUND 
+		SET GROUND1=#{param1}
+		WHERE HUMAN=#{param2 }
+	</update>
+	
+	<select id="getUserWin" resultType="Integer">
+		SELECT WIN FROM MEMBER
+		WHERE ID=#{param1 }
+	</select>
+	
+	<update id="userWinUpdate">
+		UPDATE MEMBER SET WIN=#{param1 }
+		WHERE ID=#{param2 }
+	</update>
+	
+	<select id="getUserLose" resultType="Integer">
+		SELECT LOSE FROM MEMBER
+		WHERE ID=#{param1 }
+	</select>
+	
+	<update id="userLoseUpdate">
+		UPDATE MEMBER SET LOSE=#{param1 }
+		WHERE ID=#{param2 }
+	</update>
+</mapper>

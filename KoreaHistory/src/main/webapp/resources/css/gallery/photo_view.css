@@ -1,0 +1,71 @@
+.h1{
+	padding: 10px 0 0 250px;
+	font-size: 100px;
+	font-family: NanumBrush;
+	margin-bottom: 30px;
+	margin-top: 50px;
+}
+.photo_view_table{
+	margin-left: 600px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.photo_view_td{
+	font-size: 28px;
+	font-family: YeonSung;
+	padding:60px 90px 40px 0;
+	margin-right: 50px;
+}
+.photo_view_td_c{
+	font-size: 20px;
+	font-family: YeonSung;
+	padding-top: 20px;
+}
+.photo_view_asub{
+	padding-left: 500px;
+}
+.photo_view_sub{
+	border: 1px solid black;
+	background-color: white;
+	font-size: 25px;
+	font-family: YeonSung;
+	border-radius: 5px;
+	padding:5px 30px 5px 30px;
+}
+.photo_view_sub:hover {
+	background-color: black;
+	color: white;
+}
+.photo_view_return{
+	text-decoration:none;
+	color: black;
+	border: 1px solid black;
+	font-family: YeonSung;
+	border-radius: 5px;
+	font-size: 24px;
+	background-color: white;
+	padding:8px 20px 8px 20px;
+}
+.photo_view_return:hover {
+	background-color: black;
+	color: white;
+}
+
+
+@font-face {font-family: '백범김구'; src: url(../font/독립서체_백범김구_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_별헤는밤'; src: url(../font/독립서체_윤동주_별헤는밤_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_서시'; src: url(../font/독립서체_윤동주_서시_GS.ttf) format('truetype');}
+@font-face {font-family: '윤봉길'; src: url(../font/독립서체_윤봉길_GS.ttf) format('truetype');}
+@font-face {font-family: '한용운'; src: url(../font/독립서체_한용운_GS.ttf) format('truetype');}
+
+@font-face {font-family: 'YeonSung'; src: url(../font/YeonSung-Regular.ttf) format('truetype');}
+
+@font-face {font-family: 'NanumBrush'; src: url(../font/NanumBrush.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothic'; src: url(../font/NanumGothic.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicBold'; src: url(../font/NanumGothicBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicExtraBold'; src: url(../font/NanumGothicExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjo'; src: url(../font/NanumMyeongjo.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoBold'; src: url(../font/NanumMyeongjoBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoExtraBold'; src: url(../font/NanumMyeongjoExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumPen'; src: url(../font/NanumPen.ttf) format('truetype');}	
+@font-face {font-family: 'Madame'; src: url(../font/Madame.ttf) format('truetype');}

@@ -1,0 +1,172 @@
+.doimg{
+	background-image: url("../resources/img/pang.jpg");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-attachment: fixed;
+}
+.h1{
+	padding: 10px 0 0 450px;
+	font-size: 100px;
+	font-family: NanumBrush;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	
+}
+.photo_list_table{
+	margin-left: 420px;
+	border-collapse: collapse;
+}
+.photo_list_tr{
+	height: 100px;
+}
+.photo_list_th{
+	width:400px; 
+	font-size:32px;
+	font-family:YeonSung;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+	text-align: center;
+}
+.photo_list_th_img{
+	width:150px; 
+	font-size:32px;
+	font-family:YeonSung;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+	text-align: center;
+}
+.photo_list_ti{
+	width:450px; 
+	font-size:32px;
+	font-family:YeonSung;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+	text-align: center;
+}
+.photo_list_img{
+	
+}
+.photo_list_tit{
+	text-align:center;
+	text-decoration: none;
+	color: black;
+	font-family: YeonSung;
+	font-size: 20px;
+}
+.photo_list_td{
+	text-align: center;
+	border-bottom-style: solid;
+	line-height: 5;
+	
+}
+.photo_list_wri{
+	padding-top: 20px;
+	text-align: right;
+}
+.photo_list_wri_pwri{
+	text-decoration: none;
+	color: black;
+	font-family: YeonSung;
+	font-weight: bold;
+	font-size: 25px;
+}
+.qna_wri_qwri:hover{
+	color: blue;
+}
+
+.photo_list_tit:hover {
+	color: blue;
+}
+#photo_list_pid{
+	font-family: 백범김구;
+	font-size: 18px;
+}
+photo_list_pdate{
+	font-weight:500;
+}
+#pform{
+	margin-left: 420px;
+}
+.photo_list_num{
+	text-decoration: none;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+}
+.photo_list_num:hover {
+	color: olive;
+}
+#searform{
+	margin-left: 950px;
+}
+.photo_search{
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: 800;
+}
+input[id="photo_list_check"] + #photo_list_search_tit{
+	display: inline-block;
+	width: 20px;
+	height:15px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+input[id="photo_list_check"]:checked+#photo_list_search_tit{
+	background-color: black;
+}
+input[id="photo_list_check"]{
+	display: none ;
+}
+input[id="photo_list_con"] + #photo_list_search_con{
+	display: inline-block;
+	width: 20px;
+	height: 15px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+input[id="photo_list_con"]:checked+#photo_list_search_con{
+	background-color: black;
+}
+input[id="photo_list_con"]{
+	display: none;
+}
+.photo_list_text{
+	padding-top: 10px;
+	padding-bottom:5px;
+	border-radius: 3px;
+	border: 1px solid black;
+}
+.photo_list_sub{
+	height: 25px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px none black;
+	background-color: white;
+	font-weight: bold;
+}
+.photo_list_sub:hover {
+	color: white;
+	background-color: black;
+}
+
+
+@font-face {font-family: '백범김구'; src: url(../font/독립서체_백범김구_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_별헤는밤'; src: url(../font/독립서체_윤동주_별헤는밤_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_서시'; src: url(../font/독립서체_윤동주_서시_GS.ttf) format('truetype');}
+@font-face {font-family: '윤봉길'; src: url(../font/독립서체_윤봉길_GS.ttf) format('truetype');}
+@font-face {font-family: '한용운'; src: url(../font/독립서체_한용운_GS.ttf) format('truetype');}
+
+@font-face {font-family: 'YeonSung'; src: url(../font/YeonSung-Regular.ttf) format('truetype');}
+
+@font-face {font-family: 'NanumBrush'; src: url(../font/NanumBrush.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothic'; src: url(../font/NanumGothic.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicBold'; src: url(../font/NanumGothicBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicExtraBold'; src: url(../font/NanumGothicExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjo'; src: url(../font/NanumMyeongjo.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoBold'; src: url(../font/NanumMyeongjoBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoExtraBold'; src: url(../font/NanumMyeongjoExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumPen'; src: url(../font/NanumPen.ttf) format('truetype');}	
+@font-face {font-family: 'Madame'; src: url(../font/Madame.ttf) format('truetype');}

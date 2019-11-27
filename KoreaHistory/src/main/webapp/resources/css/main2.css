@@ -1,0 +1,547 @@
+/* 이 문서는 삭제예정 */
+//
+//
+//
+//
+//
+//
+
+
+@charset "utf-8";
+
+
+@font-face{
+    
+    font-family:"BodoniXT";
+    src:url("font/BodoniXT.woff");
+    
+}
+
+/*table 부분*/
+
+table, th, td {
+    
+    border: 3px solid #bcbcbc;
+    
+}
+
+table {
+
+    width: 1000px;
+    height: 500px;
+    font-weight: bold;
+    
+}
+
+caption { 
+
+    font-size: 1vw;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.self {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a {
+    
+    text-decoration: none; 
+    color: white;}
+
+a:hover { 
+
+    color: black;
+}
+
+/*메인,바디 부분*/
+#container { 
+             width: 100%;
+             max-width: 1920px;
+             margin: auto;
+             
+            
+}
+
+/*헤더 부분*/
+.m-header { 
+    
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 99999999;
+    background: transparent;
+    transition: 0.5s;
+    clear: both;
+    top: auto;
+    color: white;
+    font-family: "BodoniXT"
+    
+    
+}
+
+.m-header:hover { 
+
+    background: black;
+    color: slategray;
+    
+}
+
+.m-header a {
+    
+    color: white;
+}
+
+.m-header a:hover{
+    
+    color:white;
+}
+
+.sticky {
+    
+    background: black;
+    top: 0;
+    color: white;
+    font-weight: bold;
+    opacity: 0.69
+    
+    
+}
+
+.logo { 
+
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    font-size: 1vw;
+    
+}
+
+
+.logo h2 { 
+
+    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav { 
+
+    width: 50%;
+    height: 100%;
+    float: right;
+    
+
+    
+}
+
+.nav ul { 
+    
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    
+    font-weight: bold;
+    font-size: 1.1vw;
+    padding: 0 50px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+/*fixed background */
+
+/*
+.box1 {
+    
+    width: 100%;
+    height: 350px;
+    background: black;
+    position: relative;
+    
+}
+
+.abs1 { 
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../img/f1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:  0 0;
+    
+    
+}
+
+.box2 {
+    
+    width: 100%;
+    height: 350px;
+    background: black;
+    position: relative;
+    
+}
+
+.abs2 { 
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../img/f3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:  0 0;
+    
+    
+}
+*/
+
+
+
+/*비디오 부분*/
+
+
+/*
+.show-video {
+    
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    
+}
+
+
+.video {
+    
+    
+    width: 100%;
+}
+*/
+
+
+
+/*슬라이더 부분*/
+
+
+.slider-wrap {
+    
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    
+}
+
+.slider-wrap img {
+    
+    width: 100%;
+}
+
+/* 스와이퍼 css*/
+
+.swiper-container {
+    
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.swiper-slide {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.swiper-button-prev, .swiper-button-next { 
+
+    color: white;
+    width: 35px;
+    height: 50px;
+    background: gray;
+    opacity: 0.6;
+    
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    
+    width: 35px;
+    height: 50px;
+    background: black;
+    color: white;
+    opacity: 0.6;
+}
+
+
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
+    
+    font-size: 2vw;
+    font-weight: bold;
+    
+}
+
+.swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after {
+    
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.swiper-pagination-bullet { 
+
+    background:whitesmoke;
+    opacity: 1;
+    
+}
+
+.swiper-pagination-bullet-active { 
+
+    background: black;
+    opacity: 1;
+}
+
+/*컨텐츠 부분*/
+
+#intro { 
+
+    width: 100%;
+    height: 1200px;
+    padding-top: 120px;
+}
+
+#intro .t-box {
+    
+   width: 100%;
+    
+}
+
+.t-box h2 {
+    
+    width: 20%;
+    color: white;
+    font-weight: bold;
+    font-family: "BodoniXT";
+    background: rgb(33, 33, 33);
+    margin: auto;
+    padding: auto;
+    text-align: center;
+}
+
+.t-box h2:hover {
+    
+    background: dimgray;
+    color: white;
+}
+
+.t-box p { 
+
+    text-align: center;
+    font-size: 1.2vw;
+    font-weight: bold;
+    
+}
+
+.it-img { 
+
+    width: 100%;
+    clear: both;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+.it-img li { 
+
+    width: 25%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.it-img img { 
+ 
+    width: 100%;
+   
+}
+
+
+
+/*work 부분*/
+
+#portfo { 
+
+    width: 100%;
+    height: 1200px;
+    padding-top: 120px;
+    clear: both;
+}
+
+.pf-box {
+   
+    width: 100%;
+}
+
+.pf-box h2 {
+    
+    width: 20%;
+    color: white;
+    font-weight: bold;
+    font-family: "BodoniXT";
+    background: rgb(33, 33, 33);
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+.pf-box h2:hover {
+    
+    background: dimgray;
+    color: white;
+}
+
+.pf-box .pf-img { 
+    
+    width: 49%;
+    height: 100px;
+    float: left; 
+    
+    
+}
+
+.pf-box .pf-img img { 
+
+    width: 100%;
+}
+
+
+.pf-img:last-child { 
+
+    float: right;
+}
+
+
+
+
+
+
+
+/*intro 부분*/
+
+#ms { 
+    
+    padding-top: 120px;
+    width: 100%;
+    height: 1200px;
+}
+
+.msp { 
+    
+    width: 100%;
+    
+}
+
+.msp h2 { 
+    
+    width: 20%;
+    color: white;
+    font-weight: bold;
+    font-family: "BodoniXT";
+    background: rgb(33, 33, 33);
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.msp h2:hover { 
+
+    background: dimgray;
+    color: white;
+}
+
+
+
+/*소셜 미디어*/
+
+
+.social { 
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-img ul { 
+    
+    
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+.social-img ul li { 
+    
+    padding: 50px;
+    float: left;
+}
+
+
+
+/* 푸터 부분*/
+
+
+.footer {
+    
+    margin-top: 30px;
+    width: 100%;
+    height: 200px;
+}
+
+.footer .copyright {
+    
+    width: 100%;
+    height: 100%;
+    background: rgb(33, 33, 33);
+}
+
+.copyright p {
+    
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "BodoniXT";
+}

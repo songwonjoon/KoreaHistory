@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+#ground {
+	background-image: url("../LeeImg/ground.jpg");
+	width: 150px;
+	height: 130px;
+	float: left;
+	margin: 10px 10px 10px 10px;
+}
+
+.ia {
+	margin-left: 80px;
+	margin-top: 30px;
+	width: 50px;
+	height: 50px;
+	width: 50px;
+}
+
+.blue {
+	color: blue;
+}
+
+.red {
+	color: red;
+}
+
+.question {
+	font-size: 23pt;
+	font-family: crayon;
+	color: white;
+	width: 800px;
+	height: 400px;
+	background-image: url("../LeeImg/BlackBoard.jpg");
+}
+
+.answer {
+	font-family: crayon;
+	font-size: 15pt;
+}
+
+.win {
+	background-image: url("../LeeImg/indefendencedoor.jpg");
+	background-size: cover;
+}
+
+.dice_div {
+	position: absolute;
+	width: 550px;
+	height: 200px;
+	top: 80%;
+	left: 40%;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.lose_div {
+	position: absolute;
+	left: 35%;
+	font-family: crayon;
+	font-size: 40pt;
+}
+
+.lose {
+	background-image: url("../LeeImg/KoreanFlag.jpg");
+	background-size: cover;
+}
+
+.ap {
+	font-family: crayon;
+	font-size: 25pt;
+}
+
+.qna_seach_sub {
+	height: 25px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px none black;
+	background-color: white;
+	font-weight: bold;
+	padding-bottom: 2px;
+}
+
+.qna_seach_sub:hover {
+	color: white;
+	background-color: black;
+}
+
+@font-face {
+	font-family: 'crayon';
+	src: url(../LeeFont/crayon.ttf) format('truetype');
+}

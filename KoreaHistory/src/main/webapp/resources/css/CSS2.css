@@ -1,0 +1,811 @@
+
+
+
+body {
+   
+   background-color: #F6F6F6;
+   margin: auto;
+/*    padding-top: 100px; */
+/*    width: 100%; */
+/*    max-width: 1920px; */
+/*    overflow: hidden; */
+}
+
+.Gradient{
+   position: relative;  top: -500px;
+   background: linear-gradient( to right, #FF0404,#FF6060 ,#FF9595 ,#FFD2D2 ,#FFE6E6 ,#ffffff ,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#E1E1FF,#CACAFF ,#9797FF ,#6262FF,#0000FF  );
+   width: 100%;
+    height: 100px;
+    top: 0px;
+/*         margin-bottom: 10px; */
+/*         z-index: -1; */
+}
+
+.rollbar {
+   
+    position: fixed;
+   top: 147px;
+   right: 0;
+   height: 135px;
+   display: block;
+   z-index: 1001;
+   padding: 0 15px;
+   width: 150px;
+}
+
+.rollbar a {
+   
+    background-color: transparent;
+   color: inherit;
+   outline: none;
+   text-decoration: none;
+   display: block;
+   width: 55px;
+   height: 55px;
+   margin: 0 80px;
+   
+}
+
+.rollbar .top {
+   
+    display: block;
+   background: url(../img/IOI123.jpg) no-repeat 0 0;
+   background-size: 100%;
+/*    text-indent: -9999px; */
+   width: 55px;
+   height: 55px;
+}
+
+/*헤더 부분*/
+.MainHeaderBar { /*메인 해더 설정*/
+ 
+   top: 0px;
+    width: 100%;
+    height: 100px;
+    position: fixed; /* 화면고정*/
+    z-index: 99999999; /* 요소를 겹치게 설정 값이 높을수록 상단*/
+    background: transparent   ; /*배경 투명도 설정*/
+    clear: both;   /*이미지에 대한 글자 위치*/
+    color: #4a4a4a; /*로그인 옆 막대기 색*/
+    transition: 0.5s;
+    font-family: YeonSung;
+}
+
+.MainHeaderBar:hover { /*메인 해더 호버시 설정*/
+
+   opacity: 0.9;
+   background-color: #373737;
+   transition: 1s;
+   color: #818181; /*로그인 옆 막대기 호버색*/
+   background: button highlight;
+}
+
+.MainHeaderBar .logo { /*메인 해더의 로고 설정*/
+    
+    color: #000000;
+    text-decoration: none;
+}
+.MainHeaderBar:hover .logo { /*메인 해더 호버시 로고 설정*/
+    
+    color: red;
+    transition: 0.5s;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .75);
+}
+
+.MainHeaderBar .logo:hover{ /* 메인 해더의 로고 호버시 설정*/
+    
+    transition: 0.5s;
+   text-shadow: 0 1px 0 rgba(255, 255, 255, .75);
+    color:blue;
+}
+
+.sticky {   /* 스크롤 임계점에서 상단 네비게이션 화면 고정*/
+    
+/*     background: #000000; */
+/*     top: 0; */
+/*     opacity: 0.1; */
+/*     background: transparent; */
+/*     font-weight: bold;   글자 굵기 */
+/*     color: white; */
+}
+
+.icon { 
+
+    width: 45%;
+    height: 100%;
+    float: left;
+    display: flex;
+    font-size: 1.1vw;
+}
+
+.icon h2 { 
+
+    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TopMenu { 
+
+   width: 100%;   /* 메인메뉴 넓이*/
+}
+
+.TopMenu ul { 
+    
+   list-style-type: none;   /* 메인 메뉴 안의 ul 내부의 목록 표시를 없애줌*/
+   margin: 0px;   /* 메인 메뉴 안의 ul의 margin을 없앰*/
+   padding: 0px;   /* 메인 메뉴 안의 ul의 padding을 없앰*/
+}
+
+.TopMenu .topmenuLink {
+    
+   float: left;   /* 왼쪽으로 나열되도록 설정*/
+   line-height: 100px;   /* 텍스트 한 줄의 높이를 px로 설정*/
+   vertical-align: middle;   /* 세로 정렬을 가운데로 설정*/
+   text-align: center;   /* 텍스트를 가운데로 정렬*/
+   position: relative;   /* 해당 li 태그 내부의 top/left 포지션 초기화*/
+}
+
+.MainHeaderBar:hover .menuLink {
+   
+   color: #c0c0c0;
+   transition: 0.5s;
+}
+
+.MainHeaderBar .menuLink:hover {       /* menuLink 호버시 설정 */ 
+   
+   transition: 0.3s;
+   text-shadow: 0 0 .1em, 0 0 .3em; /*네온*/
+   color: white;
+}
+
+.MainHeaderBar .menuLink {
+   
+   font-size: 1.1vw;
+   font-weight: bolder;
+   color: #000000;
+}
+
+.menuLink, .submenuLink {      /*   상위 메뉴와 하위 메뉴의 a 태그에 공통으로 설정할 스타일*/
+   
+   text-decoration: none;   /*   a 태그의 꾸밈 효과 제거*/
+   display: block;      /*a 태그의 클릭 범위를 넓힘*/
+   width: 130px;   
+}
+
+.subMenu {   /* 하위 메뉴 스타일*/
+   
+   position:  absolute;   /* html의 flow에 영향을 미치지 않게 absolute 설정*/
+   height:  0px;   /* 초기 높이는 0px로 설정*/
+   overflow: hidden;   /*  실 내용이 높이보다 커지면 해당 내용을 감춤*/
+   -webkit-transition: height 0.1s;   /* 구버전 크롬/사파리*/
+   -moz-transition: height 0.1s;   /* 파폭*/
+   -o-transition: height 0.1s;   /* 오페라*/
+   font-weight: 600;
+   align-items: center;
+   justify-content: center;
+   font-size: 1vw;
+   color: black;
+}   
+
+.subMenu .submenuLink:hover {
+   
+   color: white;
+   font-weight: 900;
+   background-color: #373737;
+   border: solid 0.1px #000000;
+}
+
+.subMenu:hover .submenuLink {
+   
+   transition: 0.3s;
+}
+
+.subMenu .submenuLink {   /* 하위 메뉴위 a 태그 스타일 설정*/
+   
+   background-color: #dddddd;
+   color:#000;
+     height: 70px;
+     margin-bottom: 1px;
+     text-align: center;
+     box-sizing: border-box;
+   border: solid 0.1px #fff;   /*테두리를 설정*/
+   line-height: 50pt;
+   font-family: 백범김구;
+}
+
+.longLink {
+   
+   width: 150px;
+}
+
+.topmenuLink:hover .subMenu {   /* 상위 메뉴에 마우스 오버되었을떄 그 안의 하위 메뉴 스타일 설정*/
+   
+   height: auto;   /* 하단 바 높이 */
+}
+
+.action_link {            /* 로그인/회원가입*/
+
+   font-family: "Motiva Sans", sans-serif;
+   font-size: 11px;
+   line-height: 24px;
+   margin: 0;
+   vertical-align: top;
+   padding: 3px;
+   text-decoration: none;
+   color: #000000;
+   font-weight: bold;
+}
+
+.MainHeaderBar .action_link:hover {
+   
+   font-weight: bold;
+   color: #00f4f4;
+}
+
+.MainHeaderBar:hover .action_link {
+   
+   color: #dedede;
+   transition: 2s;
+}
+
+/* #slide */
+
+.slide {
+   
+   height:700px;
+   overflow:hidden;
+   margin:0;
+   padding:0;
+}
+
+.slide ul {
+   
+   list-style:none;
+   width:calc(100% * 5);
+   display:flex;
+   animation:slide 15s infinite;   /*slide를 15초동안 진행하며 무한반복 함*/
+   margin:0;
+   padding:0;
+} 
+
+.slide li {
+   
+/*    max-width: 100%; height: auto; */
+   list-style:none;
+   width:calc(100% / 5);
+   height:750px;
+   margin:0;
+   padding:0;
+}
+
+.slide li:nth-child(1){background-image:url("../img/slide/D 1231231231.jpg");}
+.slide li:nth-child(2){background-image: url("../img/slide/K 1231231231.jpg");background-repeat: no-repeat;background-size: 100%;}
+.slide li:nth-child(3){background-image: url("../img/slide/KJ 1231231231.jpg");background-repeat: no-repeat;background-size: 100%;}
+.slide li:nth-child(4){background-image: url("../img/slide/L 1231231231.jpg");background-repeat: no-repeat;background-size: 100%;}
+.slide li:nth-child(5){background-image: url("../img/slide/Lest 1231231231.jpg");background-repeat: no-repeat;background-size: 100%;}
+    @keyframes slide {
+      0% {margin-left:0;}                   /*0 ~ 10  : 정지*/
+      10% {margin-left:0;}                  /*10 ~ 25 : 변이*/
+      20% {margin-left:-100%;}             /*25 ~ 35 : 정지*/
+      30% {margin-left:-101%;}             /*35 ~ 50 : 변이*/
+      40% {margin-left:-200%;}
+      50% {margin-left:-201%;}
+      60% {margin-left:-300%;}
+      70% {margin-left:-301%;}
+      80% {margin-left:-400%;}
+      90% {margin-left:-400%;}
+      100% {margin-left:0;}
+}
+
+.sector1 {      /*여백1*/
+
+   width: 100%;
+   height: 100px;
+   background-color: #F6F6F6;
+   color: #000000;
+   margin-bottom: 100px;
+   /* background: linear-gradient( to right, #FF0404,#FF6060 ,#FF9595 ,#FFD2D2 ,#FFE6E6 ,#ffffff ,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#E1E1FF,#CACAFF ,#9797FF ,#6262FF,#0000FF  ); */
+   /* background-image:url("../img/G-T_wrapbox/sector22.png"); */
+}
+.sector1 ul {
+   
+   list-style:none;
+   position:relative;
+   height:100%;
+} 
+
+.sector1 li {
+    text-align:center;
+   font-family: 백범김구;
+   font-size: 50px;
+   list-style:none;
+   position:absolute;
+   left:0;
+   right:0;
+   top:0;
+   bottom:0;
+   opacity:1;
+   animation:fade 20s infinite;
+   color: #000000;
+   margin-bottom: 100px;
+}
+.sector1 li pre {
+    text-align:center;
+   font-family: 백범김구;
+   font-size: 50px;
+   list-style:none;
+   position:absolute;
+   left:0;
+   right:0;
+   top:0;
+   bottom:0;
+   opacity:1;
+   animation:fade 20s infinite;
+   color: #000000;
+}
+.slider {
+   
+/*    margin: auto; */
+   color:#000000;
+   font-size:40px;
+   text-align: center;
+   height:250px;
+   overflow:hidden;
+   padding-top: 100px;
+   padding-bottom: 300px;
+   background-image:url("../img/sector22.png");
+}
+
+.slider ul {
+   
+   list-style:none;
+   position:relative;
+   height:100%;
+} 
+
+.slider li {
+   
+   color:black;
+   font-family: 백범김구;
+   font-size: 50px;
+   list-style:none;
+   position:absolute;
+   left:0;
+   right:0;
+   top:0;
+   bottom:0;
+   opacity:1;
+   animation:fade 20s infinite;
+   color: #000000;
+}
+
+/* .slider li {
+   
+   background-image:url("../img/slide/D 1231231231.jpg");
+   background-image:url("../img/sector22.png");
+   background-size: auto;
+   background-color: #F6F6F6; 
+} */
+    
+.contents   {
+   
+   margin: 0;
+   padding: 0;
+   font-size: 13px;
+   line-height: 1;
+   color: #3a3a3a;
+   font-weight: 400;
+}
+
+.frame {
+
+   overflow: hidden;
+}
+
+.pillar {
+   
+   display: block;
+   padding: 0 60px 60px 30px;
+   overflow: hidden;
+}
+/* 이미지 박스 */    
+.body_margin {
+   
+   margin-top: 260px;
+   padding: 0;
+   overflow: hidden;
+   margin-bottom: -53px;
+	margin-left: 50px;
+}
+
+.body_margin ul {
+   
+   margin: 0 -14px;
+   padding: 0;
+   list-style: none;
+}
+
+.body_margin ul>li {
+   
+   margin: 0;
+   float: left;
+   list-style: none;
+   padding: 14px;
+   width: 850px;
+   height: 400px;
+}
+
+.wrap_box, .wrap_box1, .wrap_box2 {
+   
+   display: table;
+   height: 400px;
+   width: 100%;
+}
+
+.gallery_wrap_a {
+   
+   float: left;
+   width: 50%;
+}
+.gallery_wrap_b {
+   
+   float: left;
+   width: 50%;
+}
+.gallery_wrap_c {
+   
+   float: left;
+   width: 50%;
+}
+.gallery_wrap_d {
+   
+   float: left;
+   width: 50%;
+}
+.gallery_wrap_e {
+   
+   float: left;
+   width: 50%;
+}
+.gallery_wrap_f {
+   
+   float: left;
+   width: 50%;
+}
+
+.box_img img {
+   
+   width: 100%;
+   height: 400px;
+}
+
+.text_wrap1 {
+   
+   float: left;
+   width: 50%;
+   text-align: center;
+   height: 400px;
+   background: #583C76;
+   color: #EACFBA;
+   transition: 0.5s;
+}
+.text_wrap2 {
+   
+   float: left;
+   width: 50%;
+   text-align: center;
+   height: 400px;
+   background: #A9B77C;
+   color: #016934;
+   transition: 0.5s;
+}
+.text_wrap3 {
+   
+   float: left;
+   width: 50%;
+   text-align: center;
+   height: 400px;
+   background: #00AD5B;
+   color: #FFFFFF;
+   transition: 0.5s;
+}
+.text_wrap4 {
+   
+   float: left;
+   width: 50%;
+   text-align: center;
+   height: 400px;
+   background: #FF4A01;
+   color: #CCCCCC;
+   transition: 0.5s;
+}
+.text_wrap5 {
+   
+   float: left;
+   width: 50%;
+   text-align: center;
+   height: 400px;
+   background: #00468E;
+   color: #FE5200;
+   transition: 0.5s;
+}
+.text_wrap6 {
+   
+   float: left;
+   width: 50%;
+   text-align: center;
+   height: 400px;
+   background: #CACBCD;
+   color: #000000;
+   transition: 0.5s;
+}
+
+.text_wrap1:hover {
+   
+   transition: 0.5s;
+   text-shadow: 0 0 .1em, 0 0 .3em; /*네온*/
+   color: white;
+   background-color: black;
+}
+.text_wrap2:hover {
+   
+   transition: 0.5s;
+   text-shadow: 0 0 .1em, 0 0 .3em; /*네온*/
+   color: white;
+   background-color: black;
+}
+.text_wrap3:hover {
+   
+   transition: 0.5s;
+   text-shadow: 0 0 .1em, 0 0 .3em; /*네온*/
+   color: white;
+   background-color: black;
+}
+.text_wrap4:hover {
+   
+   transition: 0.5s;
+   text-shadow: 0 0 .1em, 0 0 .3em; /*네온*/
+   color: white;
+   background-color: black;
+}
+.text_wrap5:hover {
+   
+   transition: 0.5s;
+   text-shadow: 0 0 .1em, 0 0 .3em; /*네온*/
+   color: white;
+   background-color: black;
+}
+.text_wrap6:hover {
+   
+   transition: 0.5s;
+   text-shadow: 0 0 .1em, 0 0 .3em; /*네온*/
+   color: white;
+   background-color: black;
+}
+
+.first-letter {
+   
+   font-size: 200px;
+}
+
+.backcolor {
+   
+   font-size: 30px;
+   display: inline;
+   width: 100px;
+   line-height: 360px;
+   font-weight: 900;
+   writing-mode: vertical-rl;
+   float: right;
+   
+}
+
+.sector2 {      /*여백2*/
+
+/* background-image:url("../img/slide/D 1231231231.jpg"); */
+   background-image:url("../img/slide/sector2.png");
+   width: 100%;
+   height: 200px;
+/*    background-color: #ffffff; */
+/*    color: #000000; */
+   margin-bottom: 100px;
+   margin-top: 200px;
+}
+
+.sector2 pre {
+   
+   text-align: center;
+   font-size: 25px;
+   font-weight: bold;
+   margin-right: 120px;
+   font-family: YeonSung;
+}
+
+/*게시판,랭킹 */
+.workspace_l {
+   
+   margin-bottom: 10px;
+   margin-left: 250px;
+   margin-right: 100px;
+   width: 600px;
+   float: left;
+   background-color: #fff;
+}
+
+.workspace_r {
+   
+   margin-bottom: 10px;
+   margin-right: 150px;
+   margin-left: 100px;
+   width: 600px;
+   float: left;
+   background-color: #fff;
+}
+
+.box_outer {
+   
+   position: relative;
+   overflow: hidden;
+/*    background-color: #aaa; */
+/*    border-bottom: 1px solid #black; */
+   box-sizing: border-box;
+   width: 600px;
+   height: 574px;
+}
+
+.top_box {
+   
+   padding: 10px 15px 5px 10px;
+   overflow: hidden;
+   height: 20px;
+   text-align: right;
+   font-size: 15px;
+   background-color: #F6F6F6;
+}
+
+.top_box:visited {
+   
+   padding: 10px 15px 5px 10px;
+   overflow: hidden;
+   height: 20px;
+   text-align: right;
+   font-size: 15px;
+   background-color: #F6F6F6;
+   color: purple;
+}
+
+.bottom_box {
+   
+   padding: 0px;
+   margin: 0px 0;
+   overflow-y: auto;
+   height: 540px;
+}
+
+.ranking_box{
+	
+	width: 600px;
+	height: 539px;
+	border-left-style: none;
+	border-right-style: none;
+	border-collapse: collapse;
+}
+.ttt{
+	border: solid #F6F6F6;
+	border-left-style: none;
+	border-right-style: none;
+}
+.table_title{
+	color:white;
+	background-color: black;
+	font-family: YeonSung;
+	font-size: 20px;
+}
+.table_content{
+	background-color: white;
+}
+/* footer 부분 */
+.footer .copyright {         /* footer 부분을 하단에 고정하는 역할 */
+   
+   margin-top: 800px;
+   border-bottom: 0;
+   wight: 100%;
+   height: 100%;
+   background-color: black;
+}
+
+.copyright p {
+   
+   height: 300px;
+   color: #ffffff;
+   font-weight: bold;
+   font-size: 1.75em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+   font-family: YeonSung;
+}
+
+
+@font-face {font-family: '백범김구'; src: url(../font/독립서체_백범김구_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_별헤는밤'; src: url(../font/독립서체_윤동주_별헤는밤_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_서시'; src: url(../font/독립서체_윤동주_서시_GS.ttf) format('truetype');}
+@font-face {font-family: '윤봉길'; src: url(../font/독립서체_윤봉길_GS.ttf) format('truetype');}
+@font-face {font-family: '한용운'; src: url(../font/독립서체_한용운_GS.ttf) format('truetype');}
+
+@font-face {font-family: 'YeonSung'; src: url(../font/YeonSung-Regular.ttf) format('truetype');}
+
+@font-face {font-family: 'NanumBrush'; src: url(../font/NanumBrush.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothic'; src: url(../font/NanumGothic.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicBold'; src: url(../font/NanumGothicBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicExtraBold'; src: url(../font/NanumGothicExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjo'; src: url(../font/NanumMyeongjo.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoBold'; src: url(../font/NanumMyeongjoBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoExtraBold'; src: url(../font/NanumMyeongjoExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumPen'; src: url(../font/NanumPen.ttf) format('truetype');}	
+@font-face {font-family: 'Madame'; src: url(../font/Madame.ttf) format('truetype');}
+
+
+
+.qna_table{
+	margin-left: 0px;
+	border-collapse: collapse;
+}
+.qna_tr{
+	height: 89px;
+}
+.qna_t{
+	width:250px; 
+	font-size:32px;
+	font-family:YeonSung;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+}
+tr .qna_ti{
+	width:750px; 
+	font-size:35px;
+	font-family:YeonSung;
+	border: solid black;
+	border-left-style: none;
+	border-right-style: none;
+}
+.qna_td{
+	text-align: center;
+	border-bottom-style: 2px solid #F6F6F6;
+	line-height: 2;
+	/* border: solid #F6F6F6; */
+}
+
+.qna_td_tit{
+
+	text-decoration: none;
+	color: black;
+	font-family: YeonSung;
+	font-size: 20px;
+	text-overflow: clip;
+}
+.qna_td_tit:hover {
+	color: blue;
+}
+#qna_td_writer{
+	font-family: 백범김구;
+	font-size: 18px;
+}
+#qna_td_ox{
+	font-weight: bolder;
+	font-size: 20px;
+}
+#qna_td_qdate{
+	font-weight:500;
+}
+a.top {
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+  display: none;
+}

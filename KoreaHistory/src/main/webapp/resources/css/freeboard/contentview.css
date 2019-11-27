@@ -1,0 +1,133 @@
+.h1{
+	padding: 10px 0 0 550px;
+	font-size: 70px;
+	font-family: YeonSung;
+}
+.h3{
+	padding: 10px 0 0 550px;
+	font-size: 70px;
+	font-family: YeonSung;
+}
+.view_tr{
+	border-bottom-style: solid;
+}
+.view_td{
+	font-size:25px;
+	font-family: YeonSung;
+	height: 100px;
+	padding: 10px 0 10px 50px;
+}
+.view_t{
+	font-size: 25px;
+	font-family: YeonSung;
+}
+#reply{
+	font-family: YeonSung;
+	font-size:25px;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#reply:hover{
+	background-color: black;
+	color: white;
+}
+#re{
+	margin-left: 720px;
+}
+#rep{
+	margin-left: 630px;
+}
+.reply_td{
+	font-size:25px;
+	font-family: YeonSung;
+	padding-left: 110px;
+}
+#de{
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+	font-size: 20px;
+	border-radius: 5px;
+	padding: 3px 3px 3px 3px;
+}
+.view_mo{
+	text-decoration: none; 
+	color: black; 
+	border: 1px solid black; 
+	padding: 5px;
+	border-radius: 5px;
+}
+.view_mo:hover{
+	text-decoration: none; 
+	color: white;
+	background-color: black; 
+	border: 1px solid black; 
+	padding: 5px;
+}
+.view_de{
+	text-decoration: none; 
+	color: black; 
+	border: 1px solid black; 
+	padding: 5px;
+	border-radius: 5px;
+}
+.view_de:hover{
+	text-decoration: none; 
+	color: white;
+	background-color: black; 
+	border: 1px solid black; 
+	padding: 5px;
+	
+	
+}
+.view_list{
+	text-decoration: none; 
+	color: black; 
+	border: 1px solid black; 
+	padding: 5px 5px 5px 5px;
+	border-radius: 5px;
+}
+.view_list:hover{
+	text-decoration: none; 
+	color: white;
+	background-color: black; 
+	border: 1px solid black; 
+	padding: 5px 5px 5px 5px;
+}
+#content {
+	border : 0; 							
+	outline : 0; 
+	font-size: 20px; 
+	font-family: YeonSung; 
+}
+.content {
+	border: 1px solid green;
+	border-radius: 5px;
+	font-size: 20px; 
+	font-family: YeonSung; 
+}
+.content:hover {
+	border: 1px solid green;
+	border-radius: 5px;
+	font-size: 20px; 
+	font-family: YeonSung; 
+}
+@font-face {font-family: '백범김구'; src: url(../font/독립서체_백범김구_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_별헤는밤'; src: url(../font/독립서체_윤동주_별헤는밤_GS.ttf) format('truetype');}
+@font-face {font-family: '윤동주_서시'; src: url(../font/독립서체_윤동주_서시_GS.ttf) format('truetype');}
+@font-face {font-family: '윤봉길'; src: url(../font/독립서체_윤봉길_GS.ttf) format('truetype');}
+@font-face {font-family: '한용운'; src: url(../font/독립서체_한용운_GS.ttf) format('truetype');}
+
+@font-face {font-family: 'YeonSung'; src: url(../font/YeonSung-Regular.ttf) format('truetype');}
+
+@font-face {font-family: 'NanumBrush'; src: url(../font/NanumBrush.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothic'; src: url(../font/NanumGothic.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicBold'; src: url(../font/NanumGothicBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumGothicExtraBold'; src: url(../font/NanumGothicExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjo'; src: url(../font/NanumMyeongjo.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoBold'; src: url(../font/NanumMyeongjoBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumMyeongjoExtraBold'; src: url(../font/NanumMyeongjoExtraBold.ttf) format('truetype');}	
+@font-face {font-family: 'NanumPen'; src: url(../font/NanumPen.ttf) format('truetype');}	
+@font-face {font-family: 'Madame'; src: url(../font/Madame.ttf) format('truetype');}
